@@ -34,6 +34,7 @@ text='\
     columns=fullflexible,\n\
     showstringspaces=false,\n\
     aboveskip=1em,\n\
+    tabsize=4,\n\
     keywordstyle=\\color{black}\\bfseries,\n\
     basicstyle=\\consolas,\n\
     rulecolor=\\color{black}}\n\

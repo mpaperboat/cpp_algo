@@ -14,7 +14,8 @@ Make system stack larger. Simply put this code before main function, and the sys
 \end{tabu}
 
 \subsection*{Code}
-*/#include<cstdlib>
+*/
+#include<cstdlib>
 using namespace std;
 #define STACK_SIZE 64
 #if __GNUC__

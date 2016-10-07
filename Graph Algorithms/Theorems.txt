@@ -1,0 +1,7 @@
+﻿\noindent\begin{tabu*} to \textwidth {|X|}
+\hline
+\bfseries{考虑一棵树T，T1是T接上一个节点u，T2是T接上另外一个节点v。则无根树T1和T2的同构等价于以u为根的有根树T1和以v为根的有根树T2同构。}\\
+\hline
+证明方法考虑以树的规模来进行数学归纳法，同时配合反证。
+\hline
+\end{tabu*}\\
