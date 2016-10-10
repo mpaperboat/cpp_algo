@@ -1,4 +1,4 @@
-#include<iostream>//2015-5-7 °æ±¾£¿ ÏÉÈËÕÆ²îÆÀ+1 = =
+ï»¿#include<iostream>//2015-5-7 ç‰ˆæœ¬ï¼Ÿ ä»™äººæŒå·®è¯„+1 = =
 #include<cstdio>
 #include<cmath>
 #include<algorithm>
@@ -57,7 +57,7 @@ struct splay_node{
 	}
 };
 splay_node _splay[MAXN+MAXM];
-inline int get_parent(splay_node *x,splay_node *&fa){return (fa=x->fa) ? fa->ch[1]==x : -1;}//°Ñ¸¸Ç×ÈÓµ½faÀïÍ¬Ê±·µ»ØdÖµ 
+inline int get_parent(splay_node *x,splay_node *&fa){return (fa=x->fa) ? fa->ch[1]==x : -1;}//æŠŠçˆ¶äº²æ‰”åˆ°faé‡ŒåŒæ—¶è¿”å›då€¼ 
 inline void rotate(splay_node *x){
 	splay_node *fa,*gfa;
 	int t1,t2;
