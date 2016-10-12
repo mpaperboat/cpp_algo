@@ -1,51 +1,58 @@
+/*
+16.10.12
+c++14
+Î¬¶È¶¯Ì¬»¯
+*/
 #include<bits/stdc++.h>
-template<class T,int N>struct Matrix{
-    Matrix(T t=0){
-        for(int i=0;i<N;++i)
-            for(int j=0;j<N;++j)
-                u[i][j]=i==j?t:0;
+template<class T>
+struct Matrix{
+    Matrix(int _n,T t=0):
+        n(_n),v(n,vector<T>(n)){
+        for(int i=0;i<n;++i)
+            for(int j=0;j<n;++j)
+                v[i][j]=i==j?t:0;
     }
-    T u[N][N];
+    int n;
+    vector<vector<T>>v;    
 };
-template<class T,int N>Matrix<T,N>operator+(const Matrix<T,N>&a,const Matrix<T,N>&b){
-    Matrix<T,N>c;
-    for(int i=0;i<N;++i)
-        for(int j=0;j<N;++j)
-            c.u[i][j]=a.u[i][j]+b.u[i][j];
+template<class T>
+auto operator+(const Matrix<T>&a,decltype(a)b){
+    Matrix<T>c;
+    for(int i=0;i<a.n;++i)
+        for(int j=0;j<a.n;++j)
+            c.v[i][j]=a.v[i][j]+b.v[i][j];
     return c;
 }
-template<class T,int N>Matrix<T,N>operator*(const Matrix<T,N>&a,const Matrix<T,N>&b){
-    Matrix<T,N>c;
-    for(int i=0;i<N;++i)
-        for(int j=0;j<N;++j)
-            for(int k=0;k<N;++k)
-                c.u[i][j]+=a.u[i][k]*b.u[k][j];
+template<class T>
+auto operator*(const Matrix<T>&a,decltype(a)b){
+    Matrix<T>c(a.n);
+    for(int i=0;i<a.n;++i)
+        for(int j=0;j<a.n;++j)
+            for(int k=0;k<a.n;++k)
+                c.v[i][j]+=a.v[i][k]*b.v[k][j];
     return c;
 }
-template<class T,int N>Matrix<T,N>operator*(const Matrix<T,N>&a,const T&b){
-    Matrix<T,N>c=a;
-    for(int i=0;i<N;++i)
-        for(int j=0;j<N;++j)
-            c.u[i][j]*=b;
+template<class T>
+auto operator*(const Matrix<T>&a,const T&b){
+    Matrix<T>c=a;
+    for(int i=0;i<a.n;++i)
+        for(int j=0;j<a.n;++j)
+            c.v[i][j]*=b;
     return c;
 }
-template<class T,int N>Matrix<T,N>operator/(const Matrix<T,N>&a,const T&b){
-    Matrix<T,N>c=a;
-    for(int i=0;i<N;++i)
-        for(int j=0;j<N;++j)
-            c.u[i][j]/=b;
+template<class T>
+Matrix<T>operator/(const Matrix<T>&a,const T&b){
+    Matrix<T>c=a;
+    for(int i=0;i<a.n;++i)
+        for(int j=0;j<a.n;++j)
+            c.v[i][j]/=b;
     return c;
 }
-template<class T,int N>Matrix<T,N>pow(Matrix<T,N>a,long long b){
-    Matrix<T,N>r(1);
+template<class T>
+Matrix<T>pow(Matrix<T>a,long long b){
+    Matrix<T>r(a.n,1);
     for(;b;a=a*a,b>>=1)
         if(b&1)
             r=r*a;
     return r;
-}
-template<class T,int N>ostream&operator<<(ostream&s,const Matrix<T,N>a){
-    for(int i=0;i<N;++i)
-        for(int j=0;j<N;++j)
-            s<<a.u[i][j]<<(j+1==N?'\n':' ');
-    return s;
 }
