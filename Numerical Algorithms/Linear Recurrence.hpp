@@ -1,7 +1,7 @@
-/*
+ï»¿/*
 hn = a1*h(n-1) + a2*h(n-2) + ... + ak*h(n-k)
 k^2lgn
-ÄÇ¸ökaraÖ»ÊÇ³£ÊıÓÅ»¯
+é‚£ä¸ªkaraåªæ˜¯å¸¸æ•°ä¼˜åŒ–
 */
 #include<bits/stdc++.h>
 template<class T>

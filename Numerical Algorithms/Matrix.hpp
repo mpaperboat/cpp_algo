@@ -1,7 +1,7 @@
-/*
+﻿/*
 16.10.12
 c++14
-ά�ȶ�̬��
+维度动态化
 */
 #include<bits/stdc++.h>
 template<class T>
